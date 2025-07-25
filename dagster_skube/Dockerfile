@@ -15,7 +15,7 @@ RUN pip install --upgrade pip \
 
 COPY . .
 
-RUN pip install -e .
+RUN pip install -e ./dagster_skube
 
 RUN useradd -U -m dagster
 USER dagster
