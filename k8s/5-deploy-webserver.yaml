@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: dagster
-        image: ${{ inputs.IMAGE_NAME }}
+        image: IMAGE_PLACEHOLDER
         envFrom:
         - secretRef:
             name: dagster
