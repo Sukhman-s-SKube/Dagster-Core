@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dagster-daemon
+  namespace: dagster
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dagster-daemon
+  template:
+    metadata:
+      labels:
+        app: dagster-daemon
+    spec:
+      containers:
+      - name: dagster
+        image: ${{ inputs.IMAGE_NAME }}
+        envFrom:
+        - secretRef:
+            name: dagster
+        env:
+        - name: DAGSTER_COMPONENT
+          value: "daemon"
