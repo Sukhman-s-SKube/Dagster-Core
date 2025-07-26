@@ -13,9 +13,7 @@ RUN pip install --no-cache-dir --upgrade pip \
       dagit==1.* \
       dagster-postgres
 
-COPY . .
-
-COPY dagster_skube/dagster.yaml ${DAGSTER_HOME}/dagster.yaml
+COPY dagster_skube/ ${DAGSTER_HOME}/
 
 RUN pip install --no-cache-dir -e ./dagster_skube
 
