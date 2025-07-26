@@ -13,7 +13,9 @@ RUN pip install --upgrade pip \
       dagit==1.* \
       dagster-postgres
 
-COPY ./dagster_skube .
+COPY . .
+COPY /dagster_skube/dagster.yaml /opt/dagster/dagster.yaml
+
 
 RUN pip install -e ./dagster_skube
 
