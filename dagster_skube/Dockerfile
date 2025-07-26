@@ -13,7 +13,7 @@ RUN pip install --upgrade pip \
       dagit==1.* \
       dagster-postgres
 
-COPY . .
+COPY ./dagster_skube .
 
 RUN pip install -e ./dagster_skube
 
