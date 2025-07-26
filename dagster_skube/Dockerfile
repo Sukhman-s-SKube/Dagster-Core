@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir --upgrade pip \
 
 COPY dagster_skube/ ${DAGSTER_HOME}/
 
-RUN pip install --no-cache-dir -e ./dagster_skube
+RUN pip install --no-cache-dir -e .
 
 RUN mkdir -p ${DAGSTER_HOME}/history \
  && chown -R 1000:1000 ${DAGSTER_HOME}
