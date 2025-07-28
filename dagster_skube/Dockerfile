@@ -9,7 +9,7 @@ RUN apt-get update \
 
 RUN pip install --no-cache-dir --upgrade pip \
  && pip install --no-cache-dir \
-      "dagster[postgres,aws]==1.*" \
+      dagster-aws \
       dagit==1.* \
       dagster-postgres
 
