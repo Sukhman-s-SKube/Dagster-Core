@@ -5,4 +5,3 @@ metadata:
   namespace: dagster
 data:
   HELLO: "World"
-  S3_BUCKET: "dagster"

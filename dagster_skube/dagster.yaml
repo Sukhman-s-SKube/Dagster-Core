@@ -16,8 +16,7 @@ compute_logs:
   module: dagster_aws.s3.compute_log_manager
   class:  S3ComputeLogManager
   config:
-    bucket:
-      env: S3_BUCKET
+    bucket: dagster
     prefix: compute-logs
     endpoint_url:
       env: AWS_ENDPOINT_URL
