@@ -1,0 +1,5 @@
+load_from:
+  - grpc_server:
+      host: code-location-1
+      port: 3030
+      location_name: boc-forecaster
