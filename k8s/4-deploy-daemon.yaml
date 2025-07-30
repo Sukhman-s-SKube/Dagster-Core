@@ -19,6 +19,8 @@ spec:
         envFrom:
         - secretRef:
             name: dagster
+        - configMapKeyRef:
+            name: dagster
         env:
         - name: DAGSTER_COMPONENT
           value: "daemon"
