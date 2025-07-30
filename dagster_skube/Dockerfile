@@ -28,8 +28,8 @@ EXPOSE 3000
 ENTRYPOINT ["/bin/bash", "-c"]
 CMD ["\
 case \"$DAGSTER_COMPONENT\" in \
-  daemon)     exec dagster-daemon run ;; \
-  webserver|*) exec dagster-webserver -h 0.0.0.0 -p 3000 ;; \
+  daemon)     exec dagster-daemon run -w workspace.yaml ;; \
+  webserver|*) exec dagster-webserver -h 0.0.0.0 -p 3000 -w workspace.yaml ;; \
 esac"]
 
 
