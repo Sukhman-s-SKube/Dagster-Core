@@ -9,9 +9,7 @@ RUN apt-get update \
 
 RUN pip install --no-cache-dir --upgrade pip \
  && pip install --no-cache-dir \
-      dagster-aws \
-      dagit>=1.4.0,<2.0 \
-      dagster-postgres
+      "dagit>=1.4.0,<2.0"
 
 COPY dagster_skube/ ${DAGSTER_HOME}/
 
@@ -19,7 +17,6 @@ RUN pip install --no-cache-dir -e .
 
 RUN mkdir -p ${DAGSTER_HOME}/history \
  && chown -R 1000:1000 ${DAGSTER_HOME}
-
 RUN useradd -u 1000 -U -m dagster
 USER dagster
 
@@ -31,5 +28,6 @@ case \"$DAGSTER_COMPONENT\" in \
   daemon)     exec dagster-daemon run -w workspace.yaml ;; \
   webserver|*) exec dagster-webserver -h 0.0.0.0 -p 3000 -w workspace.yaml ;; \
 esac"]
+
 
 
