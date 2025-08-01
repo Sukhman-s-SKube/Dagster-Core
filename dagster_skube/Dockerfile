@@ -7,11 +7,7 @@ RUN apt-get update \
  && apt-get install -y --no-install-recommends curl \
  && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir --upgrade pip \
- && pip install --no-cache-dir \
-      "dagit>=1.4.0,<2.0" \
-      dagster-postgres  \
-      dagster-aws
+RUN pip install --no-cache-dir --upgrade pip
 
 COPY dagster_skube/ ${DAGSTER_HOME}/
 
