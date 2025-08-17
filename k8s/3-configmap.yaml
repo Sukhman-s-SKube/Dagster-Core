@@ -6,3 +6,5 @@ metadata:
 data:
   HELLO: "World"
   S3_BUCKET: "dagster"
+  MODELS_BUCKET: "models"
+  TZ: "America/Toronto"
